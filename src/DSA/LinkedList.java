@@ -1,4 +1,4 @@
-package Problems;
+package DSA;
 
 public class LinkedList {
     int size=0;
@@ -62,7 +62,7 @@ public class LinkedList {
                 System.out.println("Invalid position");
             }
 
-           else if (pos==1)
+            else if (pos==1)
             {
 //                if(head==null)
 //                {
@@ -119,14 +119,14 @@ public class LinkedList {
 
         else if(head!=tail)
         {
-              Node current=head;
+            Node current=head;
 
-              while(current.next!=tail)
-              {
-                  current=current.next;
-              }
-              tail=current;
-              tail.next=null;
+            while(current.next!=tail)
+            {
+                current=current.next;
+            }
+            tail=current;
+            tail.next=null;
 
         }
         else
@@ -165,7 +165,7 @@ public class LinkedList {
     }
 
     //display method
-  public  void display()
+    public  void display()
     {
         Node mover=head;
 
@@ -207,17 +207,17 @@ public class LinkedList {
         ll.createatstart(50);
         ll.createatstart(60);
 
-          ll.createatloc(23,1);
+        ll.createatloc(23,1);
 
-         System.out.println();
+        System.out.println();
 
-         //---------delete at start------
+        //---------delete at start------
 //        ll.deleteatstart();
 //        ll.deleteatstart();
-     //   ll.deleteatend();
-         System.out.println("Linked list created is ....");
+        //   ll.deleteatend();
+        System.out.println("Linked list created is ....");
         ll.display();
-         //System.out.println(ll.size);
+        //System.out.println(ll.size);
 
 
 
