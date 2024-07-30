@@ -1,5 +1,7 @@
 package DSA;
 
+import java.util.Scanner;
+
 public class LinkedList {
     int size=0;
     //Node class
@@ -18,8 +20,11 @@ public class LinkedList {
     Node tail=null;
 
     //create  at end method
-    public void createatend(int data)
+    public void createatend(Scanner sc)
     {
+        System.out.println("enter data :");
+        int data=sc.nextInt();
+
         Node n=new Node(data);
 
         if(head==null)
@@ -35,8 +40,11 @@ public class LinkedList {
     }
 
     //create at start
-    public void createatstart(int data)
+    public void createatstart(Scanner sc)
     {
+        System.out.println("enter data :");
+        int data=sc.nextInt();
+
         Node n=new Node(data);
 
         if(head==null)
@@ -53,8 +61,14 @@ public class LinkedList {
     }
 
     //create at given location
-    public void createatloc(int data,int pos)
+    public void createatloc(Scanner sc)
     {
+        System.out.println("enter data :");
+        int data=sc.nextInt();
+
+        System.out.println("enter position :");
+        int pos=sc.nextInt();
+
         Node n=new Node(data);
         {
             if(pos<1 || pos >size+1)
@@ -64,16 +78,16 @@ public class LinkedList {
 
             else if (pos==1)
             {
-//                if(head==null)
-//                {
-//                    head=n;
-//                    tail=n;
-//                }
-//                else{
-//                    n.next=head;
-//                    head=n;
-//                }
-                createatstart(data);
+                if(head==null)
+                {
+                    head=n;
+                    tail=n;
+                }
+                else{
+                    n.next=head;
+                    head=n;
+                }
+
             }
             else{
                 Node temp=head;
@@ -137,8 +151,13 @@ public class LinkedList {
     }
 
 
-    void deleteatloc(int data,int pos)
+    void deleteatloc(Scanner sc)
     {
+        System.out.println("enter data :");
+        int data=sc.nextInt();
+
+        System.out.println("enter position :");
+        int pos=sc.nextInt();
 
         if(pos<1 || pos>size+1)
         {
@@ -189,35 +208,63 @@ public class LinkedList {
 
     public static void main(String[]args)
     {
+        Scanner sc=new Scanner(System.in);
         LinkedList ll=new LinkedList();
 
-        //created at end
-        ll.createatend(1);
-        ll.createatend(2);
-        ll.createatend(3);
-        ll.createatend(4);
-        ll.createatend(5);
-        ll.createatend(6);
+       int ch=0;
 
-        //create at start
-        ll.createatstart(10);
-        ll.createatstart(20);
-        ll.createatstart(30);
-        ll.createatstart(40);
-        ll.createatstart(50);
-        ll.createatstart(60);
+       while(ch!=8)
+       {
+           System.out.println();
+           System.out.println("1.Create at start");
+           System.out.println("2.Create at end");
+           System.out.println("3.Create at given Location");
+           System.out.println("4.Delete at end");
+           System.out.println("5.Delete at Given location");
+           System.out.println("6.Delete at start");
+           System.out.println("7.Display");
+           System.out.println("7.exit");
+           System.out.println("Enter choice");
+           ch=sc.nextInt();
 
-        ll.createatloc(23,1);
+           switch(ch)
+           {
+               case 1: ll.createatstart(sc);
+                   break;
 
-        System.out.println();
+               case 2:ll.createatend(sc);
+                   break;
 
-        //---------delete at start------
-//        ll.deleteatstart();
-//        ll.deleteatstart();
-        //   ll.deleteatend();
-        System.out.println("Linked list created is ....");
-        ll.display();
-        //System.out.println(ll.size);
+               case 3:ll.createatloc(sc);
+                   break;
+
+               case 4:ll.deleteatstart();
+                   break;
+
+               case 5:ll.deleteatend();
+                   break;
+
+               case 6:ll.deleteatloc(sc);
+                   break;
+
+               case 7:ll.display();
+               break;
+
+               case 8:
+               {
+                   System.out.println("exiting...");
+                   System.exit(0);
+               }
+
+                   break;
+
+               default:{
+                   System.out.println("Enter valid choice");
+               }
+
+           };
+
+       }
 
 
 
