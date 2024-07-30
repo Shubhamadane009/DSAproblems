@@ -33,8 +33,9 @@ public class QueueUsingArray {
             return;
         }
         else{
-            front++;
+
             nums[front%maxsize]=-1;
+            front++;
             count--;
             System.out.println("Item popped");
             return;

@@ -9,7 +9,7 @@ public class MergeSort{
         int left=low;
         int right=mid+1;
 
-        while(left<=mid && right<=high)//this condition works until either of the two arrays are there
+        while(left<=mid && right<=high)//this condition works until either of the two arrays gets exhausted
         {
             if(nums[left]<=nums[right])
             {
@@ -49,6 +49,7 @@ public class MergeSort{
         merge(nums,low,mid,high);
 
     }
+    //info about this psuedocode is well in written form
 
     public static void main(String[] args) {
         int nums[]={3,1,2,4,1,5,2,6,4};
