@@ -1,26 +1,22 @@
 package Problems;
 
-public class LowerBound {
-    public static void main(String[]args)
-    {
+public class upperBound {
+    public static void main(String[] args) {
         int nums[]={1,3,5,6};
+        int target=3;
 
-        int target=9;
-        int ans=nums.length;
-
-        int low=0,high=nums.length-1;
+        int low=0,high=nums.length-1,ans=0;
 
         while(low<=high)
         {
             int mid=(low+high)/2;
-            if(nums[mid]<=target)
+            if(nums[mid]>target)
             {
                 ans=nums[mid];
-                low=mid+1;
-
+                high=mid-1;
             }
             else{
-                high=mid-1;
+                low=mid+1;
             }
         }
         System.out.println(ans);
