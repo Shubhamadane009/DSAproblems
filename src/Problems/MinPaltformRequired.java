@@ -23,3 +23,5 @@ public class MinPaltformRequired {
         System.out.println(max+1);
     }
 }
+
+//time comlexity -->near about O(2N)
