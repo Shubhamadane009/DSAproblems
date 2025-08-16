@@ -9,7 +9,8 @@ public class PrintNtoOne {
         if(i<1)
             return;
 
-        System.out.println(i);
         print(i-1);
+        System.out.println(i);
+//this is backtracking when the print statement is after the function call
     }
 }
